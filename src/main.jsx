@@ -19,10 +19,11 @@ import spring02 from './assets/projects/es/spring-02-web.jpg'
 import fashionBlue from './assets/projects/es/fashion-blue-web.jpg'
 import Aurora from './components/Aurora'
 
-// Video originals are kept in a separate Gitee repository so Mainland China
-// visitors do not need to load large files from GitHub Raw.
-const giteeMediaBase = 'https://gitee.com/xayron/xayron-media/raw/master/videos'
-const videoWorksBase = `${giteeMediaBase}/video-works`
+// In development, play the checked-in originals directly. On Cloudflare Pages,
+// use the same-origin media function so the browser never needs to access a
+// Gitee Raw URL itself (those requests are commonly blocked by extensions).
+const mediaBase = import.meta.env.DEV ? '/videos' : '/media'
+const videoWorksBase = `${mediaBase}/video-works`
 
 const projects = [
   {
@@ -69,7 +70,7 @@ const projects = [
     className: 'other',
     image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1800&q=85',
     materials: [
-      { title: 'FPV 2023 Highlight Reel', src: `${giteeMediaBase}/fpv-hero.mp4`, kind: 'video' },
+      { title: 'FPV 2023 Highlight Reel', src: `${mediaBase}/fpv-hero.mp4`, kind: 'video' },
     ],
   },
 ]
@@ -233,7 +234,7 @@ function App() {
     <Aurora colorStops={['#08251f', '#1c6749', '#245b88']} amplitude={0.7} blend={0.58} speed={0.32} />
     <section className={`hero ${navFloating ? 'has-floating-nav' : ''}`} id="top">
       <video className="hero-video" autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=2000&q=85">
-        <source src={`${giteeMediaBase}/fpv-hero.mp4`} type="video/mp4" />
+        <source src={`${mediaBase}/fpv-hero.mp4`} type="video/mp4" />
         <source src="https://cdn.coverr.co/videos/coverr-liquid-paint-1571/1080p.mp4" type="video/mp4" />
       </video>
       <div className="hero-vignette" />
