@@ -30,12 +30,12 @@ const projects = [
     className: 'neuro',
     image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1800&q=85',
     materials: [
-      { title: 'FILA 山猫鞋', kind: 'embed', embedSrc: 'https://open.douyin.com/player/video?vid=7309797116266777919&autoplay=0', poster: 'https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1200&q=85' },
-      { title: 'FILAKIDS BFC', src: `${videoWorksBase}/filakids-bfc.mp4`, kind: 'video' },
-      { title: 'FILA 探险家', src: `${videoWorksBase}/fila-explorer.m4v`, kind: 'video' },
-      { title: 'LEGO DreamZZZ', src: `${videoWorksBase}/lego-dreamzzz.m4v`, kind: 'video' },
-      { title: '壳牌星域概念卡车', src: `${videoWorksBase}/${encodeURIComponent('壳牌中国 X 一汽解放 星域概念卡车-三维CG_三维动画视频-新片场.mp4')}`, kind: 'video' },
-      { title: '视频作品 06', src: `${videoWorksBase}/video-06.mp4`, kind: 'video' },
+      { title: 'FILA 山猫鞋', kind: 'embed', embedSrc: 'https://player.bilibili.com/player.html?bvid=BV1C38A64EeR&page=1&autoplay=0&danmaku=0', poster: 'https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1200&q=85' },
+      { title: 'FILAKIDS BFC', kind: 'embed', embedSrc: 'https://player.bilibili.com/player.html?bvid=BV1P38A6tEAq&page=1&autoplay=0&danmaku=0' },
+      { title: 'FILA 探险家', kind: 'embed', embedSrc: 'https://player.bilibili.com/player.html?bvid=BV1C38A64Emm&page=1&autoplay=0&danmaku=0' },
+      { title: 'LEGO DreamZZZ', kind: 'embed', embedSrc: 'https://player.bilibili.com/player.html?bvid=BV1W38A6tErB&page=1&autoplay=0&danmaku=0' },
+      { title: '壳牌星域概念卡车', kind: 'embed', embedSrc: 'https://player.bilibili.com/player.html?bvid=BV1Cu8A6ZEqu&page=1&autoplay=0&danmaku=0' },
+      { title: '视频作品 06', kind: 'embed', embedSrc: 'https://player.bilibili.com/player.html?bvid=BV1C38A64EmL&page=1&autoplay=0&danmaku=0' },
     ],
   },
   {
