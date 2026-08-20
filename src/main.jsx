@@ -19,6 +19,9 @@ import spring02 from './assets/projects/es/spring-02-web.jpg'
 import fashionBlue from './assets/projects/es/fashion-blue-web.jpg'
 import Aurora from './components/Aurora'
 
+const githubMediaBase = 'https://raw.githubusercontent.com/Kokoro111/Xayron-/main/public/videos'
+const videoWorksBase = `${githubMediaBase}/video-works`
+
 const projects = [
   {
     no: '01',
@@ -27,12 +30,12 @@ const projects = [
     className: 'neuro',
     image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1800&q=85',
     materials: [
-      { title: 'FILA 山猫鞋', src: '/videos/video-works/fila-trail-h265.mp4', kind: 'video' },
-      { title: 'FILAKIDS BFC', src: '/videos/video-works/filakids-bfc.mp4', kind: 'video' },
-      { title: 'FILA 探险家', src: '/videos/video-works/fila-explorer.m4v', kind: 'video' },
-      { title: 'LEGO DreamZZZ', src: '/videos/video-works/lego-dreamzzz.m4v', kind: 'video' },
-      { title: '壳牌星域概念卡车', src: '/videos/video-works/壳牌中国 X 一汽解放 星域概念卡车-三维CG_三维动画视频-新片场.mp4', kind: 'video' },
-      { title: '视频作品 06', src: '/videos/video-works/video-06.mp4', kind: 'video' },
+      { title: 'FILA 山猫鞋', src: `${videoWorksBase}/fila-trail-h265.mp4`, kind: 'video' },
+      { title: 'FILAKIDS BFC', src: `${videoWorksBase}/filakids-bfc.mp4`, kind: 'video' },
+      { title: 'FILA 探险家', src: `${videoWorksBase}/fila-explorer.m4v`, kind: 'video' },
+      { title: 'LEGO DreamZZZ', src: `${videoWorksBase}/lego-dreamzzz.m4v`, kind: 'video' },
+      { title: '壳牌星域概念卡车', src: `${videoWorksBase}/${encodeURIComponent('壳牌中国 X 一汽解放 星域概念卡车-三维CG_三维动画视频-新片场.mp4')}`, kind: 'video' },
+      { title: '视频作品 06', src: `${videoWorksBase}/video-06.mp4`, kind: 'video' },
     ],
   },
   {
@@ -64,7 +67,7 @@ const projects = [
     className: 'other',
     image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1800&q=85',
     materials: [
-      { title: 'FPV 2023 Highlight Reel', src: '/videos/fpv-hero.mp4', kind: 'video' },
+      { title: 'FPV 2023 Highlight Reel', src: `${githubMediaBase}/fpv-hero.mp4`, kind: 'video' },
     ],
   },
 ]
@@ -228,7 +231,7 @@ function App() {
     <Aurora colorStops={['#08251f', '#1c6749', '#245b88']} amplitude={0.7} blend={0.58} speed={0.32} />
     <section className={`hero ${navFloating ? 'has-floating-nav' : ''}`} id="top">
       <video className="hero-video" autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=2000&q=85">
-        <source src="/videos/fpv-hero.mp4" type="video/mp4" />
+        <source src={`${githubMediaBase}/fpv-hero.mp4`} type="video/mp4" />
         <source src="https://cdn.coverr.co/videos/coverr-liquid-paint-1571/1080p.mp4" type="video/mp4" />
       </video>
       <div className="hero-vignette" />
