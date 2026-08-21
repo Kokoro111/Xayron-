@@ -24,6 +24,7 @@ import Aurora from './components/Aurora'
 // Gitee Raw URL itself (those requests are commonly blocked by extensions).
 const mediaBase = import.meta.env.DEV ? '/videos' : '/media'
 const videoWorksBase = `${mediaBase}/video-works`
+const bilibiliEmbed = (bvid) => `https://player.bilibili.com/player.html?bvid=${bvid}&page=1&high_quality=1&danmaku=0&autoplay=0`
 
 const projects = [
   {
@@ -33,12 +34,12 @@ const projects = [
     className: 'neuro',
     image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1800&q=85',
     materials: [
-      { title: 'FILA 山猫鞋', src: `${videoWorksBase}/fila-trail-h265.mp4`, kind: 'video' },
-      { title: 'FILAKIDS BFC', src: `${videoWorksBase}/filakids-bfc.mp4`, kind: 'video' },
-      { title: 'FILA 探险家', src: `${videoWorksBase}/fila-explorer.m4v`, kind: 'video' },
-      { title: 'LEGO DreamZZZ', src: `${videoWorksBase}/lego-dreamzzz.m4v`, kind: 'video' },
-      { title: '壳牌星域概念卡车', src: `${videoWorksBase}/${encodeURIComponent('壳牌中国 X 一汽解放 星域概念卡车-三维CG_三维动画视频-新片场.mp4')}`, kind: 'video' },
-      { title: '视频作品 06', src: `${videoWorksBase}/video-06.mp4`, kind: 'video' },
+      { title: 'FILA 山猫鞋', kind: 'embed', embedSrc: bilibiliEmbed('BV1C38A64EeR'), poster: 'https://i0.hdslb.com/bfs/archive/2e286ad1b4995009c510fae47aa41cf081cbfb6d.jpg' },
+      { title: 'FILAKIDS BFC', kind: 'embed', embedSrc: bilibiliEmbed('BV1P38A6tEAq'), poster: 'https://i1.hdslb.com/bfs/archive/76979ca8d847e9309189ab7ee9f65ac943f1ce33.jpg' },
+      { title: 'FILA 探险家', kind: 'embed', embedSrc: bilibiliEmbed('BV1C38A64Emm'), poster: 'https://i2.hdslb.com/bfs/archive/cdfff2a031b5eabb8657cded20d13105c578055a.jpg' },
+      { title: 'LEGO DreamZZZ', kind: 'embed', embedSrc: bilibiliEmbed('BV1W38A6tErB'), poster: 'https://i1.hdslb.com/bfs/archive/bfe37f9e56f97114154f2131bee2d55be3c1eb49.jpg' },
+      { title: '壳牌星域概念卡车', kind: 'embed', embedSrc: bilibiliEmbed('BV1Cu8A6ZEqu'), poster: 'https://i0.hdslb.com/bfs/archive/3491e26431c754f27daddc788e6cea068bdad72d.jpg' },
+      { title: '视频作品 06', kind: 'embed', embedSrc: bilibiliEmbed('BV1C38A64EmL'), poster: 'https://i0.hdslb.com/bfs/archive/dc558a449d0c33e2bd2d2338c4a64afa1fad3a6e.jpg' },
     ],
   },
   {
