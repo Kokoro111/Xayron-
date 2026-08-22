@@ -33,12 +33,12 @@ const projects = [
     className: 'neuro',
     image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1800&q=85',
     materials: [
-      { title: 'FILA 山猫鞋', src: `${videoWorksBase}/fila-trail-h265.mp4`, kind: 'video' },
-      { title: 'FILAKIDS BFC', src: `${videoWorksBase}/filakids-bfc.mp4`, kind: 'video' },
-      { title: 'FILA 探险家', src: `${videoWorksBase}/fila-explorer.m4v`, kind: 'video' },
-      { title: 'LEGO DreamZZZ', src: `${videoWorksBase}/lego-dreamzzz.m4v`, kind: 'video' },
-      { title: '壳牌星域概念卡车', src: `${videoWorksBase}/壳牌中国 X 一汽解放 星域概念卡车-三维CG_三维动画视频-新片场.mp4`, kind: 'video' },
-      { title: '视频作品 06', src: `${videoWorksBase}/video-06.mp4`, kind: 'video' },
+      { title: 'FILA 山猫鞋', src: `${videoWorksBase}/fila-trail-h265.mp4`, poster: '/posters/video-works/fila-trail.png', kind: 'video' },
+      { title: 'FILAKIDS BFC', src: `${videoWorksBase}/filakids-bfc.mp4`, poster: '/posters/video-works/filakids-bfc.png', kind: 'video' },
+      { title: 'FILA 探险家', src: `${videoWorksBase}/fila-explorer.m4v`, poster: '/posters/video-works/fila-explorer.png', kind: 'video' },
+      { title: 'LEGO DreamZZZ', src: `${videoWorksBase}/lego-dreamzzz.m4v`, poster: '/posters/video-works/lego-dreamzzz.png', kind: 'video' },
+      { title: '壳牌星域概念卡车', src: `${videoWorksBase}/壳牌中国 X 一汽解放 星域概念卡车-三维CG_三维动画视频-新片场.mp4`, poster: '/posters/video-works/shell-starship.png', kind: 'video' },
+      { title: '视频作品 06', src: `${videoWorksBase}/video-06.mp4`, poster: '/posters/video-works/video-06.png', kind: 'video' },
     ],
   },
   {
@@ -125,6 +125,10 @@ function ProjectCover({ project, slide }) {
 
   const renderCover = (cover, transitionClass) => {
     const isClipPreview = project.no === '01'
+
+    if (isClipPreview && cover.poster) {
+      return <img className={`project-cover ${transitionClass}`} key={`${cover.coverKey}-${transitionClass}`} src={cover.poster} alt="" decoding="async" />
+    }
 
     if (cover.kind === 'video') {
       return <video className={`project-cover ${transitionClass}`} key={`${cover.coverKey}-${transitionClass}`} src={cover.src} muted autoPlay={isClipPreview} playsInline preload="metadata" onLoadedMetadata={isClipPreview ? playRandomProjectClip : setRandomVideoPreviewFrame} />
@@ -276,7 +280,81 @@ function App() {
     <section className="capability wrap" id="capability"><div className="section-head"><div className="section-label">( 03 ) &nbsp; CAPABILITIES</div><h2>不是风格的复刻，<br />而是新的表达。</h2></div><div className="strength-grid">{strengths.map(([num, title, desc]) => <article className="strength" key={num}><span>{num}</span><Sparkles size={20} strokeWidth={1.25} /><h3>{title}</h3><p>{desc}</p></article>)}</div></section>
 
     <footer id="contact"><div className="footer-orb" /><div className="wrap footer-inner"><div className="section-label">( 04 ) &nbsp; LET'S CREATE TOGETHER</div><p className="footer-kicker">有趣的项目，随时聊聊。</p><a className="mail-link" href="mailto:Xayron2001@outlook.com">Xayron2001@<em>outlook.com</em><ArrowUpRight /></a><div className="footer-contacts"><span>WECHAT · X-Y Xiong</span><a href="tel:15827465662">TEL · 158 2746 5662</a></div><div className="footer-bottom"><span>© {currentYear} XAYRON STUDIO</span><div><a href="#top">BACK TO TOP ↑</a></div></div></div></footer>
-    {activeProject && <div className="material-overlay" role="presentation" onMouseDown={() => { setActiveProject(null); setIsMaterialViewerOpen(false) }}><section className="library-modal material-dialog" role="dialog" aria-modal="true" aria-label={`${activeProject.title} 素材库`} onMouseDown={(event) => event.stopPropagation()}><header><div><span>PROJECT {activeProject.no} / MATERIAL LIBRARY</span><h2>{activeProject.title.replace('\n', ' ')}</h2></div><button type="button" onClick={() => { setActiveProject(null); setIsMaterialViewerOpen(false) }} aria-label="关闭素材库"><X /></button></header><div className="material-grid" aria-label="素材缩略图">{(materialItems.length ? materialItems : Array.from({ length: 6 }, (_, index) => ({ title: `素材内容 ${String(index + 1).padStart(2, '0')}`, src: activeProject.image }))).map((item, index) => <button className="material-thumb" type="button" key={item.title} aria-label={item.kind === 'video' || item.kind === 'embed' ? `播放视频素材 ${index + 1}` : item.kind === 'external' ? `在新片场打开视频素材 ${index + 1}` : `查看图片素材 ${index + 1}`} onClick={() => { if (item.kind === 'external') { window.open(item.src, '_blank', 'noopener,noreferrer'); return } setActiveMaterial(index); setIsMaterialViewerOpen(true) }}>{item.kind === 'video' ? <video src={item.src} muted playsInline preload="metadata" onLoadedMetadata={setRandomVideoPreviewFrame} /> : <img src={item.poster ?? item.src ?? activeProject.image} alt="项目素材" />}<span>{String(index + 1).padStart(2, '0')}</span><i><ArrowUpRight size={17} /></i></button>)}</div><div className="material-dialog-footer"><p>{materialItems.length ? `当前项目已导入 ${materialItems.length} 项素材，点击缩略图即可放大查看。` : '后续将项目素材放入对应素材位，即可在此查看。'}</p><span>LIBRARY</span></div>{isMaterialViewerOpen && <div className="material-lightbox" role="presentation" onMouseDown={() => setIsMaterialViewerOpen(false)}><section role="dialog" aria-modal="true" aria-label="素材预览" onMouseDown={(event) => event.stopPropagation()}><button type="button" onClick={() => setIsMaterialViewerOpen(false)} aria-label="关闭素材预览"><X /></button>{selectedMaterial?.kind === 'video' ? <video key={selectedMaterial.src} src={selectedMaterial.src} controls autoPlay playsInline preload="metadata" /> : selectedMaterial?.kind === 'embed' ? <iframe title={selectedMaterial.title} src={selectedMaterial.embedSrc} allow="autoplay; fullscreen" allowFullScreen referrerPolicy="unsafe-url" /> : <img src={selectedMaterial?.src ?? activeProject.image} alt="项目素材放大预览" />}</section></div>}</section></div>}
+    {activeProject && (
+      <div
+        className="material-overlay"
+        role="presentation"
+        onMouseDown={() => {
+          setActiveProject(null)
+          setIsMaterialViewerOpen(false)
+        }}
+      >
+        <section
+          className="library-modal material-dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${activeProject.title} 素材库`}
+          onMouseDown={(event) => event.stopPropagation()}
+        >
+          <header>
+            <div>
+              <span>PROJECT {activeProject.no} / MATERIAL LIBRARY</span>
+              <h2>{activeProject.title.replace('\n', ' ')}</h2>
+            </div>
+            <button type="button" onClick={() => { setActiveProject(null); setIsMaterialViewerOpen(false) }} aria-label="关闭素材库"><X /></button>
+          </header>
+          <div className="material-grid" aria-label="素材缩略图">
+            {(materialItems.length ? materialItems : Array.from({ length: 6 }, (_, index) => ({
+              title: `素材内容 ${String(index + 1).padStart(2, '0')}`,
+              src: activeProject.image,
+            }))).map((item, index) => (
+              <button
+                className="material-thumb"
+                type="button"
+                key={item.title}
+                aria-label={item.kind === 'video' || item.kind === 'embed' ? `播放视频素材 ${index + 1}` : item.kind === 'external' ? `在新片场打开视频素材 ${index + 1}` : `查看图片素材 ${index + 1}`}
+                onClick={() => {
+                  if (item.kind === 'external') {
+                    window.open(item.src, '_blank', 'noopener,noreferrer')
+                    return
+                  }
+                  setActiveMaterial(index)
+                  setIsMaterialViewerOpen(true)
+                }}
+              >
+                {item.kind === 'video' && item.poster ? (
+                  <img src={item.poster} alt="项目素材" loading="lazy" decoding="async" />
+                ) : item.kind === 'video' ? (
+                  <video src={item.src} muted playsInline preload="metadata" onLoadedMetadata={setRandomVideoPreviewFrame} />
+                ) : (
+                  <img src={item.poster ?? item.src ?? activeProject.image} alt="项目素材" loading="lazy" decoding="async" />
+                )}
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <i><ArrowUpRight size={17} /></i>
+              </button>
+            ))}
+          </div>
+          <div className="material-dialog-footer">
+            <p>{materialItems.length ? `当前项目已导入 ${materialItems.length} 项素材，点击缩略图即可放大查看。` : '后续将项目素材放入对应素材位，即可在此查看。'}</p>
+            <span>LIBRARY</span>
+          </div>
+          {isMaterialViewerOpen && (
+            <div className="material-lightbox" role="presentation" onMouseDown={() => setIsMaterialViewerOpen(false)}>
+              <section role="dialog" aria-modal="true" aria-label="素材预览" onMouseDown={(event) => event.stopPropagation()}>
+                <button type="button" onClick={() => setIsMaterialViewerOpen(false)} aria-label="关闭素材预览"><X /></button>
+                {selectedMaterial?.kind === 'video' ? (
+                  <video key={selectedMaterial.src} src={selectedMaterial.src} poster={selectedMaterial.poster} controls autoPlay playsInline preload="metadata" />
+                ) : selectedMaterial?.kind === 'embed' ? (
+                  <iframe title={selectedMaterial.title} src={selectedMaterial.embedSrc} allow="autoplay; fullscreen" allowFullScreen referrerPolicy="unsafe-url" />
+                ) : (
+                  <img src={selectedMaterial?.src ?? activeProject.image} alt="项目素材放大预览" />
+                )}
+              </section>
+            </div>
+          )}
+        </section>
+      </div>
+    )}
   </main>
 }
 
