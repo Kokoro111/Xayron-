@@ -122,3 +122,198 @@
 
 /* Personal image: preserve the supplied photograph's native color without any tint. */
 .portrait img{filter:none}.portrait:after{display:none}
+/* Detailed experience entry */
+.experience-summary,
+.experience-capabilities { grid-column: 2 / 4; }
+
+.experience-summary {
+  border-left: 2px solid rgba(229,255,63,.65);
+  padding-left: 11px;
+}
+
+.experience-summary b,
+.experience-capabilities > b {
+  font: 11px 'DM Mono';
+  letter-spacing: .06em;
+  color: var(--acid);
+}
+
+.experience-summary p {
+  margin: 5px 0 0;
+  color: var(--soft);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.experience-zifan-head {
+  display: grid;
+  gap: 10px;
+}
+
+.about-copy .experience-zifan-head .experience-summary {
+  grid-column: auto;
+}
+
+.experience-work--long { gap: 18px 30px; }
+
+.experience-capabilities {
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+
+.capability-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 30px;
+  margin-top: 13px;
+}
+
+.capability-list p {
+  margin: 0;
+  border-left: 2px solid rgba(229,255,63,.35);
+  padding-left: 11px;
+  color: var(--soft);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.capability-list strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.about-copy .experience-summary,
+.about-copy .experience-capabilities { grid-column: 2 / 4; }
+
+.experience-zifan-marker {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.experience-zifan-portrait {
+  width: min(100%, 142px);
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  overflow: hidden;
+  background: #05110e;
+}
+
+.experience-zifan-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+/* Experience 03 reuses the portrait area as a compact identity marker. */
+@media (min-width: 801px) {
+  .about-copy .experience--zifan {
+    grid-column: 1 / 4;
+    grid-template-columns: minmax(132px, .48fr) repeat(3, minmax(0, 1fr));
+    gap: 18px clamp(18px, 2vw, 30px);
+    margin-top: 26px;
+    padding-top: 16px;
+  }
+
+  .experience--zifan .experience-zifan-marker {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    align-items: center;
+    gap: 15px;
+    padding: 6px clamp(14px, 1.5vw, 20px) 0 0;
+    border-right: 1px solid var(--line);
+  }
+
+  .experience--zifan .experience-label {
+    align-self: stretch;
+    padding-top: 0;
+  }
+
+  .experience--zifan .experience-zifan-head {
+    grid-column: 2 / 5;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 0 24px;
+    align-items: start;
+    margin: 0;
+    padding: 0 0 16px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .experience--zifan .experience-zifan-head .experience-title {
+    grid-column: auto;
+    grid-row: auto;
+    margin: 0;
+    padding-top: 1px;
+    white-space: nowrap;
+  }
+
+  .about-copy .experience--zifan .experience-zifan-head .experience-summary {
+    display: block;
+    grid-column: auto;
+    grid-row: auto;
+    margin: 0;
+  }
+
+  .about-copy .experience--zifan .experience-zifan-head .experience-summary p {
+    margin: 0;
+  }
+
+  .about-copy .experience--zifan .experience-work {
+    grid-column: 2 / 5;
+    grid-row: 2;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px clamp(18px, 2vw, 30px);
+    align-self: start;
+    margin: 0;
+  }
+
+  .about-copy .experience--zifan .experience-capabilities {
+    grid-column: 2 / 5;
+    grid-row: 3;
+    align-self: start;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    margin: 0;
+  }
+
+  .experience--zifan .capability-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px clamp(18px, 2vw, 30px);
+  }
+}
+
+@media (max-width: 800px) {
+  .experience-summary,
+  .experience-capabilities,
+  .about-copy .experience-summary,
+  .about-copy .experience-capabilities { grid-column: auto; }
+
+  .experience--zifan .experience-zifan-head .experience-summary {
+    display: block;
+    margin: 0;
+  }
+
+  .experience--zifan .experience-zifan-head .experience-summary p { margin: 5px 0 0; }
+
+  .experience-zifan-marker {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .experience-zifan-portrait {
+    width: 72px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    flex: 0 0 auto;
+  }
+
+  .capability-list { grid-template-columns: 1fr; gap: 13px; }
+}

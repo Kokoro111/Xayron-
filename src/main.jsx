@@ -269,6 +269,34 @@ function App() {
           <div className="about-text"><p className="intro">你好，我是 <strong>Xayron</strong>。一名专注于品牌视觉、数字体验与 AI 创作的影视从业者。</p><p className="muted">我相信创作不是堆砌，而是让想法被感知的方式。过去这些年，我与文化、科技和生活方式领域的品牌一起，把模糊的愿景变成清晰而独特的体验。</p></div>
           <div className="education"><div className="education-label">EDUCATION / 01</div><div className="education-school"><strong>武昌工学院</strong><span>Wuchang Institute of Technology</span></div><div className="education-major">本科 · 摄影系 <i /> 2019 — 2023</div><p><b>主修课程：</b>摄影技术与技巧、摄像技术基础、摄影构图、照明技术、PHOTOSHOP 图片艺术、产品摄影、人像摄影、专题摄影、商业广告摄影、摄影综合创作研究。</p></div>
           <div className="experience"><div className="experience-label">EXPERIENCE / 02</div><div className="experience-title"><strong>Wplus Studio</strong><span>2023</span></div><div className="experience-work"><div><b>FILA</b><p>探索者徒步鞋：FPV 航拍、制片、录音<br />BFC 网球短袖：制片、录音<br />山猫鞋 2 越野跑鞋：FPV 航拍、制片</p></div><div><b>LEGO 积木</b><p>乐高梦境城堡系列视频制作：摄像、录音<br />乐高太空机甲 3IN1 变格动画短片：创意分镜脚本策划、拍摄</p></div><div><b>可口可乐</b><p>可口可乐 FITA 成功回馈视频制作：拍摄</p></div><div><b>壳牌</b><p>壳牌星舰视频制作：制片</p></div></div><p className="experience-brands">合作品牌：FILA / lululemon / 壳牌 / 百威 / 江南布衣 / 可口可乐 / 优衣库 / 日加满 etc.</p></div>
+      <div className="experience experience--zifan">
+        <div className="experience-zifan-marker">
+          <div className="experience-label">EXPERIENCE / 03</div>
+          <figure className="experience-zifan-portrait">
+            <img src={profileImage} alt="Xayron" />
+          </figure>
+        </div>
+                  <div className="experience-zifan-head">
+                    <div className="experience-title"><strong>上海至梵传媒</strong><span>2024 — 2026</span></div>
+                    <div className="experience-summary"><b>多项目内容全链路操盘</b><p>横跨食品、酒类、家电、文化 IP 多赛道，独立承担账号定位、素材分析、编导、拍摄剪辑、直播配套全流程工作。</p></div>
+                  </div>
+            <div className="experience-work experience-work--long">
+              <div><b>王义斋｜爆款肉松麻花</b><p>完成竞品与爆款素材拆解、编导、拍摄剪辑带货短视频；优化产品展示、食欲感画面与转化话术，为直播间持续输送引流内容。</p></div>
+              <div><b>RIO｜酒类品牌</b><p>负责短视频内容策划与落地，围绕产品消费场景完成脚本编导、实拍剪辑，面向年轻群体打磨情绪向、场景化内容。</p></div>
+              <div><b>苏泊尔｜家电商业拍摄</b><p>围绕家电使用场景完成脚本策划、实拍执行、剪辑包装；突出产品卖点，产出适配品牌宣传、投放与直播切片的内容物料。</p></div>
+              <div><b>玉佛禅寺｜文化账号运营</b><p>完成内容选题、文案编导、视频拍摄剪辑、排期发布与数据复盘，平衡传统文化内核与新媒体表达。</p></div>
+              <div><b>直播配套落地执行</b><p>负责直播间搭建调试、流程与脚本策划、预热短视频、场控及复盘，打通短视频到直播间的流量闭环。</p></div>
+              <div><b>素材与数据复盘</b><p>拆解完播、点击率、场观与转化漏斗，迭代选题、封面、镜头语言及脚本，并沉淀选题库、模板与剪辑 SOP。</p></div>
+            </div>
+            <div className="experience-capabilities"><b>核心能力</b><div className="capability-list">
+              <p><strong>0‑1 内容 &amp; 直播全链路冷启动</strong>独立完成账号定位、爆款素材拆解、内容编导、拍摄剪辑与直播间搭建，覆盖食品快消、酒类、家电、文化文旅等多品类项目。</p>
+              <p><strong>全栈内容生产能力</strong>擅长素材调研、爆款归因、脚本编导、分镜策划、实拍执行与后期剪辑，可输出短视频、直播脚本与项目策划方案。</p>
+              <p><strong>直播配套运营</strong>负责直播硬件搭建调试、直播策划、流程脚本、场控执行与复盘，联动短视频预热引流，助推流量转化。</p>
+              <p><strong>多品类项目操盘</strong>拥有老字号食品、RIO 酒类、苏泊尔家电及玉佛禅寺文化账号等项目经验，兼顾商业转化与品牌调性。</p>
+              <p><strong>数据驱动迭代</strong>拆解短视频、素材与直播全链路数据，分析完播、点击与流量漏斗，持续迭代内容策略并沉淀可复用 SOP。</p>
+              <p><strong>跨项目协同</strong>对接品牌方、主播与摄制团队，把控内容排期、质量与交付，在品牌质感、内容流量与商业目标间取得平衡。</p>
+            </div></div>
+          </div>
         </div>
         <div className="stats"><div><b>{String(workYears).padStart(2, '0')}</b><span>年工作经验</span></div><div><b>16<sup>+</sup></b><span>合作品牌</span></div></div>
         <div className="about-contacts about-links"><a href="mailto:Xayron2001@outlook.com"><Mail size={16} /> Xayron2001@outlook.com</a><span><MessageCircle size={16} /> WeChat · X-Y Xiong</span><a href="tel:15827465662"><Phone size={16} /> 158 2746 5662</a></div>
