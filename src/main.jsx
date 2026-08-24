@@ -272,14 +272,11 @@ function App() {
       <div className="experience experience--zifan">
         <div className="experience-zifan-marker">
           <div className="experience-label">EXPERIENCE / 03</div>
-          <figure className="experience-zifan-portrait">
-            <img src={profileImage} alt="Xayron" />
-          </figure>
         </div>
-                  <div className="experience-zifan-head">
-                    <div className="experience-title"><strong>上海至梵传媒</strong><span>2024 — 2026</span></div>
-                    <div className="experience-summary"><b>多项目内容全链路操盘</b><p>横跨食品、酒类、家电、文化 IP 多赛道，独立承担账号定位、素材分析、编导、拍摄剪辑、直播配套全流程工作。</p></div>
-                  </div>
+        <div className="experience-zifan-head">
+          <div className="experience-title"><strong>上海至梵传媒</strong><span>2024 — 2026</span></div>
+          <div className="experience-summary"><b>多项目内容全链路操盘</b><p>横跨食品、酒类、家电、文化 IP 多赛道，独立承担账号定位、素材分析、编导、拍摄剪辑、直播配套全流程工作。</p></div>
+        </div>
             <div className="experience-work experience-work--long">
               <div><b>王义斋｜爆款肉松麻花</b><p>完成竞品与爆款素材拆解、编导、拍摄剪辑带货短视频；优化产品展示、食欲感画面与转化话术，为直播间持续输送引流内容。</p></div>
               <div><b>RIO｜酒类品牌</b><p>负责短视频内容策划与落地，围绕产品消费场景完成脚本编导、实拍剪辑，面向年轻群体打磨情绪向、场景化内容。</p></div>
