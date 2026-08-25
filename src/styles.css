@@ -5,6 +5,7 @@
 
 /* Hero → About: a shared, diffuse light field removes the hard section break. */
 .hero:after{content:'';position:absolute;z-index:1;width:130vw;height:310px;left:-15vw;bottom:-180px;background:radial-gradient(ellipse at center,rgba(111,134,46,.48),rgba(24,29,29,.2) 42%,transparent 71%);filter:blur(32px);pointer-events:none}.about{position:relative;isolation:isolate;padding-top:215px;background:linear-gradient(180deg,#121613 0,#0a0a0b 38%)}.about:before{content:'';position:absolute;z-index:-1;width:110vw;height:310px;left:-5vw;top:-135px;background:radial-gradient(ellipse at 50% 0,rgba(120,145,45,.32),rgba(17,22,17,.32) 42%,transparent 72%);filter:blur(28px);pointer-events:none}
+.about-grid { row-gap: clamp(20px, 3.5vw, 70px); }
 
 /* Personal-photo crops: portrait-friendly framing for the supplied outdoor image. */
 .crop-eye img{object-position:50% 33%;transform:scale(1.42)}.crop-mouth img{object-position:49% 64%;transform:scale(1.48)}.portrait img{object-position:center 42%;filter:grayscale(.62) contrast(1.08) saturate(.72)}
@@ -142,8 +143,8 @@
     grid-column: 1 / 4;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px clamp(18px, 2vw, 30px);
-    /* Offset the grid gap so Education → Experience / 02 is 60% tighter. */
-    margin-top: -34px;
+    /* Keep Education → Experience / 02 proportionate to the tightened row gap. */
+    margin-top: -16px;
     padding-top: 16px;
   }
 
@@ -254,7 +255,7 @@
     grid-column: 1 / 4;
     grid-template-columns: minmax(132px, .48fr) repeat(3, minmax(0, 1fr));
     gap: 18px clamp(18px, 2vw, 30px);
-    margin-top: 26px;
+    margin-top: 13px;
     padding-top: 16px;
   }
 
