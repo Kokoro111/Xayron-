@@ -122,6 +122,59 @@
 
 /* Personal image: preserve the supplied photograph's native color without any tint. */
 .portrait img{filter:none}.portrait:after{display:none}
+
+/* Wplus Studio's extended project descriptions remain legible within the two-column experience grid. */
+.experience-work--wplus > div { align-self: start; }
+.experience-work--wplus p + p { margin-top: 11px; }
+.experience-work--wplus p strong { color: var(--ink); font-weight: 500; }
+.experience:has(.experience-work--wplus) .experience-title span {
+  font-size: 0;
+}
+.experience:has(.experience-work--wplus) .experience-title span::after {
+  content: '2023-2024';
+  font: 10px 'DM Mono';
+  color: var(--soft);
+}
+
+@media (min-width: 801px) {
+  /* Match Wplus Studio to the full-width Experience / 03 rhythm. */
+  .about-copy .experience:has(.experience-work--wplus) {
+    grid-column: 1 / 4;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px clamp(18px, 2vw, 30px);
+    /* Offset the grid gap so Education → Experience / 02 is 60% tighter. */
+    margin-top: -34px;
+    padding-top: 16px;
+  }
+
+  .experience:has(.experience-work--wplus) .experience-label {
+    grid-column: 1 / 4;
+    grid-row: 1;
+  }
+
+  .experience:has(.experience-work--wplus) .experience-title {
+    grid-column: 1 / 4;
+    grid-row: 2;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .about-copy .experience:has(.experience-work--wplus) .experience-work,
+  .about-copy .experience:has(.experience-work--wplus) .experience-brands {
+    grid-column: 1 / 4;
+  }
+
+  .experience:has(.experience-work--wplus) .experience-work {
+    grid-row: 3;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px clamp(18px, 2vw, 30px);
+  }
+
+  .experience:has(.experience-work--wplus) .experience-brands {
+    grid-row: 4;
+    padding-top: 18px;
+  }
+}
 /* Detailed experience entry */
 .experience-summary,
 .experience-capabilities { grid-column: 2 / 4; }

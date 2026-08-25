@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ArrowDownRight, ArrowUpRight, ChevronDown, Dribbble, Instagram, Mail, MessageCircle, Phone, Sparkles, X } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight, ChevronDown, Mail, MessageCircle, Phone, Sparkles, X } from 'lucide-react'
 import './styles.css'
 import profileImage from './assets/profile.jpg'
 import cameraImage from './assets/hero-camera.png'
@@ -268,7 +268,7 @@ function App() {
         <div className="about-copy">
           <div className="about-text"><p className="intro">你好，我是 <strong>Xayron</strong>。一名专注于品牌视觉、数字体验与 AI 创作的影视从业者。</p><p className="muted">我相信创作不是堆砌，而是让想法被感知的方式。过去这些年，我与文化、科技和生活方式领域的品牌一起，把模糊的愿景变成清晰而独特的体验。</p></div>
           <div className="education"><div className="education-label">EDUCATION / 01</div><div className="education-school"><strong>武昌工学院</strong><span>Wuchang Institute of Technology</span></div><div className="education-major">本科 · 摄影系 <i /> 2019 — 2023</div><p><b>主修课程：</b>摄影技术与技巧、摄像技术基础、摄影构图、照明技术、PHOTOSHOP 图片艺术、产品摄影、人像摄影、专题摄影、商业广告摄影、摄影综合创作研究。</p></div>
-          <div className="experience"><div className="experience-label">EXPERIENCE / 02</div><div className="experience-title"><strong>Wplus Studio</strong><span>2023</span></div><div className="experience-work"><div><b>FILA</b><p>探索者徒步鞋：FPV 航拍、制片、录音<br />BFC 网球短袖：制片、录音<br />山猫鞋 2 越野跑鞋：FPV 航拍、制片</p></div><div><b>LEGO 积木</b><p>乐高梦境城堡系列视频制作：摄像、录音<br />乐高太空机甲 3IN1 变格动画短片：创意分镜脚本策划、拍摄</p></div><div><b>可口可乐</b><p>可口可乐 FITA 成功回馈视频制作：拍摄</p></div><div><b>壳牌</b><p>壳牌星舰视频制作：制片</p></div></div><p className="experience-brands">合作品牌：FILA / lululemon / 壳牌 / 百威 / 江南布衣 / 可口可乐 / 优衣库 / 日加满 etc.</p></div>
+          <div className="experience"><div className="experience-label">EXPERIENCE / 02</div><div className="experience-title"><strong>Wplus Studio</strong><span>2023</span></div><div className="experience-work experience-work--wplus"><div><b>FILA 运动服饰系列</b><p><strong>探索者徒步鞋：</strong>负责 FPV 航拍、制片、现场及后期音频录制。以户外山野徒步为核心场景，统筹拍摄团队、场地与周期，同步完成环境音等同期收音。</p><p><strong>BFC 网球短片：</strong>担任项目制片，统筹网球运动场景全流程拍摄，协调场地、模特、摄制组排期，把控项目进度、成本与成片质量；同步完成现场运动同期声、旁白录音及后期音频处理。</p><p><strong>山猫鞋 2 越野跑鞋：</strong>主导 FPV 航拍与制片工作；统筹项目从前期筹备到成片交付全周期。</p></div><div><b>LEGO 积木系列</b><p><strong>乐高梦境城城堡系列产品视频：</strong>负责摄像与录音工作；同步完成配音录制、环境音铺陈，输出适配官方渠道的产品宣传成片。</p><p><strong>乐高太空机甲 3IN1 定格动画短片：</strong>主导创意分镜脚本策划与实拍执行。负责定格拍摄全流程执行。</p></div><div><b>可口可乐</b><p><strong>可口可乐 FITA 成功回馈主题视频：</strong>负责全片拍摄执行。围绕品牌回馈活动主题，设计生活化、氛围感场景镜头，完成人物、产品、活动场景多维度素材拍摄，用画面传递品牌温度与活动内核，交付活动官方宣传成片。</p></div><div><b>壳牌</b><p><strong>壳牌星舰主题视频制作：</strong>担任项目制片。统筹项目流程管理，协调摄制团队、场景搭建与拍摄周期，把控创意落地质量与交付节点，保障品牌商业宣传片按标准高效完成交付。</p></div></div><p className="experience-brands">合作品牌：FILA / lululemon / 壳牌 / 百威 / 江南布衣 / 可口可乐 / 优衣库 / 日加满 etc.</p></div>
       <div className="experience experience--zifan">
         <div className="experience-zifan-marker">
           <div className="experience-label">EXPERIENCE / 03</div>
